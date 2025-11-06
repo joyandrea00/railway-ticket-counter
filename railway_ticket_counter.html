@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Railway Ticket Counter</h2>
+    <form id="ticketForm">
+        <label>Passenger Name:</label>
+        <input type="text" id="name" required>
+
+        <label>From:</label>
+        <input type="text" id="from" required>
+
+        <label>To:</label>
+        <input type="text" id="to" required>
+
+        <label>Date of Journey:</label>
+        <input type="date" id="date" required>
+
+        <label>Class:</label>
+        <select id="class">
+            <option>First Class</option>
+            <option>Second Class</option>
+            <option>Sleeper</option>
+            <option>General</option>
+        </select>
+
+        <button type="button" onclick="generateTicket()">Generate Ticket</button>
+    </form>
+
+    <div class="ticket" id="ticket">
+        <h3>Your Ticket Details</h3>
+        <p><b>Name:</b> <span id="tname"></span></p>
+        <p><b>From:</b> <span id="tfrom"></span></p>
+        <p><b>To:</b> <span id="tto"></span></p>
+        <p><b>Date:</b> <span id="tdate"></span></p>
+        <p><b>Class:</b> <span id="tclass"></span></p>
+        <p class="success">✅ Ticket Successfully Booked!</p>
+    </div>
+</div>
+
+<script>
+function generateTicket() {
+    document.getElementById("tname").textContent = document.getElementById("name").value;
+    document.getElementById("tfrom").textContent = document.getElementById("from").value;
+    document.getElementById("tto").textContent = document.getElementById("to").value;
+    document.getElementById("tdate").textContent = document.getElementById("date").value;
+    document.getElementById("tclass").textContent = document.getElementById("class").value;
+    document.getElementById("ticket").style.display = "block";
+}
+</script>
+
+</body>
+</html>
